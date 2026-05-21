@@ -61,35 +61,63 @@
 
         // both right thumb keys
 
-        combo_accent {
-            timeout-ms = <200>;
-            key-positions = <32 33>;
-            bindings = <&mo 4>;
+        combo_settings_layer {
+            key-positions = <30 31>;
+            bindings = <&to 5>;
+            layers = <0>;
         };
 
         // internal-left & external-right thumb keys
-
-        combo_sym2 {
-            timeout-ms = <200>;
-            key-positions = <31 33>;
-            bindings = <&mo 4>;
-        };
-
         // both left thumb keys
-
-        combo_settings {
-            timeout-ms = <200>;
-            key-positions = <30 31>;
-            bindings = <&mo 4>;
-        };
-
         // left index & middle fingers (home-row)
         // hold control & space for Adobe workflow
 
         combo_ctrl_space {
-            timeout-ms = <200>;
-            key-positions = <12 13>;
+            key-positions = <27 28>;
             bindings = <&kp LC(SPACE)>;
+            layers = <0>;
+        };
+
+        combo_mute {
+            bindings = <&kp C_MUTE>;
+            key-positions = <11 12>;
+            layers = <2>;
+        };
+
+        combo_cut {
+            bindings = <&kp LC(X)>;
+            key-positions = <20 21>;
+            layers = <0>;
+        };
+
+        combo_copy {
+            bindings = <&kp LC(C)>;
+            key-positions = <21 22>;
+            layers = <0>;
+        };
+
+        combo_paste {
+            bindings = <&kp LC(V)>;
+            key-positions = <22 23>;
+            layers = <0>;
+        };
+
+        combo_caps_lock {
+            bindings = <&kp CAPS>;
+            key-positions = <26 27 28>;
+            layers = <0>;
+        };
+
+        combo_escape {
+            bindings = <&kp ESC>;
+            key-positions = <1 2>;
+            layers = <0>;
+        };
+
+        combo_pad_layer {
+            bindings = <&to 4>;
+            key-positions = <32 33>;
+            layers = <0>;
         };
     };
 
@@ -115,28 +143,37 @@
 
         sym {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans
+&kp EXCL   &kp AT     &kp HASH  &kp DLLR   &trans  &kp PIPE  &kp EQUAL  &kp LPAR  &kp RPAR  &kp BSLH
+&kp PRCNT  &kp CARET  &kp AMPS  &kp ASTRK  &trans  &kp PLUS  &kp MINUS  &kp LBKT  &kp RBKT  &kp SQT
+&kp GRAVE  &trans     &to 5     &trans     &trans  &trans    &kp UNDER  &kp LBRC  &kp RBRC  &kp DQT
+                                &trans     &trans  &trans    &trans
             >;
         };
 
         nav {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans
+&kp ESC        &trans        &kp LS(LC(T))  &kp INS    &trans  &kp PG_UP  &kp HOME          &kp UP    &kp END            &trans
+&kp LC(GRAVE)  &kp C_VOL_DN  &kp C_VOL_UP   &kp PSCRN  &trans  &kp PG_DN  &kp LEFT          &kp DOWN  &kp RIGHT          &kp DEL
+&trans         &trans        &trans         &trans     &trans  &trans     &kp LG(LC(LEFT))  &trans    &kp LC(LG(RIGHT))  &trans
+                                            &trans     &trans  &trans     &trans
             >;
         };
 
         num {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5   &kp F6   &kp F7  &kp F8  &kp F9  &kp F10
+&kp N1  &kp N2  &kp N3  &kp N4  &kp N5   &kp N6   &kp N7  &kp N8  &kp N9  &kp N0
+&trans  &trans  &trans  &trans  &kp F11  &kp F12  &trans  &trans  &trans  &trans
+                        &trans  &trans   &trans   &trans
+            >;
+        };
+
+        pad {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &kp KP_NUMLOCK   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS
+&trans  &trans  &trans  &trans  &trans  &kp KP_MULTIPLY  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS
+&trans  &trans  &trans  &trans  &trans  &kp KP_DIVIDE    &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT
+                        &trans  &to 0   &kp KP_ENTER     &kp KP_N0
             >;
         };
 
@@ -146,7 +183,7 @@
 &bootloader     &none  &none  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 3  &none  &unstick  &none  &bootloader
 &none           &none  &none  &none       &bt BT_SEL 1  &bt BT_SEL 4  &none  &none     &none  &none
 &studio_unlock  &none  &none  &none       &bt BT_SEL 2  &bt BT_SEL 5  &none  &none     &none  &studio_unlock
-                              &none       &none         &none         &none
+                              &to 0       &to 0         &to 0         &to 0
             >;
         };
     };
