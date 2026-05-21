@@ -11,6 +11,8 @@ Firmware for: [Urchin Keyboard](https://github.com/duckyb/urchin)
 
 ## Keymap Cheat Sheet
 
+TODO: This image is no longer valid. Create a new one.
+
 This layout is inspired by [Seniply by Stevep99](https://stevep99.github.io/seniply/)
 
 [See it in action on YouTube!](https://youtu.be/IZ83uU0ltaE)
