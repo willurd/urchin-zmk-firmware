@@ -117,6 +117,12 @@
             key-positions = <26 27>;
             layers = <0>;
         };
+
+        combo_num_layer {
+            bindings = <&mo 3>;
+            key-positions = <32 31>;
+            layers = <0>;
+        };
     };
 
     keymap {
