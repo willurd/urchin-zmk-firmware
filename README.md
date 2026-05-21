@@ -1,3 +1,5 @@
+# Urchin ZMK firmware
+
 Firmware for: [Urchin Keyboard](https://github.com/duckyb/urchin)
 
 ## Getting started
