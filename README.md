@@ -2,6 +2,22 @@
 
 Firmware for: [Urchin Keyboard](https://github.com/duckyb/urchin)
 
+## TODO
+
+- Shift mod tap timing still needs work.
+  - It's a bit too long.
+  - Left hand shift generates more misfires than right hand shift. Maybe decrease timing for left hand?
+- Consider dedicated layer keys on the thumbs.
+  - Do I really need tab on the base layer?
+  - Do I really need enter on the base layer?
+  - Would combos work for these keys? What about putting them on other layers?
+- Create a nice layout image like [urob's](https://github.com/urob/zmk-config).
+- Consider moving behaviors, macros, combos, conditional layers, etc to their own .dtsi files.
+- Pull urob's zmk-helpers repo in as a proper submodule, rather than copying the key labels code.
+- Learn a new layout. I'm considering:
+  - colemak-dh
+  - canary
+
 ## Getting started
 
 **Are you trying to make your own ZMK firmware?**  
@@ -13,9 +29,6 @@ Firmware for: [Urchin Keyboard](https://github.com/duckyb/urchin)
 
 TODO: This image is no longer valid. Create a new one.
 
-This layout is inspired by [Seniply by Stevep99](https://stevep99.github.io/seniply/)
-
-[See it in action on YouTube!](https://youtu.be/IZ83uU0ltaE)
 <div align="center">
   
   ![sweep-layout](https://user-images.githubusercontent.com/27895007/185715593-69f9f981-ae17-4788-b2a8-d1360c65622a.svg)
