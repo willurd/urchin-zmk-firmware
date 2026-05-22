@@ -1,7 +1,9 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include "../zmk-helpers/include/zmk-helpers/key-labels/34.h"
+
+#include "zmk-helpers/helper.h"
+#include "zmk-helpers/key-labels/34.h"
 
 // Layer definitions
 
@@ -103,15 +105,16 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_pad_layer {
-            bindings = <&to 4>;
-            key-positions = <32 33>;
-            layers = <0>;
-        };
+        // TODO: This was too easy to accidentally press (at least while I'm learning the keyboard).
+        // combo_pad_layer {
+        //     bindings = <&to 4>;
+        //     key-positions = <32 33>;
+        //     layers = <0>;
+        // };
 
         combo_settings_layer {
             bindings = <&to 5>;
-            key-positions = <30 31>;
+            key-positions = <30 31 32 33>;
             layers = <0>;
         };
 
