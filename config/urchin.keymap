@@ -2,17 +2,16 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-#include <zmk-helpers/helper.h>
-#include <zmk-helpers/key-labels/34.h>
+#include "config.h"
 
 // Layer definitions
 
-#define L_BAS 0
-#define L_SYM 1
-#define L_NAV 2
-#define L_NUM 3
-#define L_PAD 4
-#define L_SET 5
+#define LAYER_BAS 0
+#define LAYER_SYM 1
+#define LAYER_NAV 2
+#define LAYER_NUM 3
+#define LAYER_PAD 4 // Disabled for now.
+#define LAYER_SET 5
 
 // -----------------
 
@@ -88,9 +87,7 @@
     };
 
     macros {
-        // sometimes my device thinks a modifier is being held down
-        // pressing all modifiers fixes it.
-
+        // Releases any stuck modifiers.
         unstick: unstick {
             label = "ZM_unstick";
             compatible = "zmk,behavior-macro";
