@@ -23,6 +23,50 @@
 
 / {
     behaviors {
+        // HRM tuning order:
+        //
+        // 1. require-prior-idle-ms  (main tuning knob)
+        //    ↑ = fewer accidental mods, harder intended holds
+        //    ↓ = easier holds, more accidental mods
+        //
+        //    accidental mods while typing      -> increase
+        //    intended mods become taps         -> decrease
+        //    one hand worse                    -> split per-hand behaviors
+        //    shift worse than ctrl/alt/gui     -> separate shift behavior
+        //
+        //    Typical:
+        //      shift: 75-110
+        //      ctrl/alt/gui: 115-150
+        //
+        // 2. quick-tap-ms  (tap-repeat / tap-hold transition)
+        //    ↑ = easier repeats, more sticky/repeat risk
+        //    ↓ = cleaner separation, harder repeats
+        //
+        //    repeated letters / sticky taps -> decrease
+        //
+        //    Typical: 125-175
+        //
+        // 3. tapping-term-ms  (broad tap-vs-hold window)
+        //    ↑ = easier holds, more accidental holds
+        //    ↓ = crisper taps, harder holds
+        //
+        //    Tune LAST. Usually not the real HRM problem.
+        //    Typical: 250-300
+        //
+        // Recommended HRM setup:
+        //   flavor = "balanced";          // avoid hold-preferred
+        //   hold-trigger-on-release;      // prevents same-hand accidental holds
+        //   positional hold-tap;          // opposite hand + thumbs only
+        //
+        // Example:
+        //   left HRMs  -> KEYS_R + THUMBS
+        //   right HRMs -> KEYS_L + THUMBS
+        //
+        // General advice:
+        //   - tune one variable at a time
+        //   - test real coding/text workflows, not just lowercase typing tests
+        //   - once "mostly correct", stop tuning for a few days and adapt
+
         hml: homerow_mod_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HML";
